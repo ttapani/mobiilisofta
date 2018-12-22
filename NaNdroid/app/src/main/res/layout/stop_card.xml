@@ -20,7 +20,7 @@
 
 
         <TextView
-            android:id="@+id/stopName"
+            android:id="@+id/lineName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -36,7 +36,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            card_view:layout_constraintTop_toBottomOf="@+id/stopName" />
+            card_view:layout_constraintTop_toBottomOf="@+id/lineName" />
+
+        <ImageView
+            android:id="@+id/favStar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="4dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/ic_star_unselect" />
 
     </android.support.constraint.ConstraintLayout>
 

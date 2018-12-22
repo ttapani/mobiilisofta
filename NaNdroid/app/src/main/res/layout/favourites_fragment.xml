@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,11 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Favourites"
-        android:textAlignment="viewStart"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="@string/title_fragment_favourites"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,59 +24,51 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/colorPrimary"
         android:backgroundTintMode="src_in"
-        android:text="Stops"
+        android:text="@string/title_fragment_stops"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favouritesTitle" />
-
-    <Button
-        android:id="@+id/newStopButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Add new favourite stop"
-        android:textAlignment="center"
-        app:layout_constraintCircleRadius="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favouriteStopsTitle" />
 
     <TextView
         android:id="@+id/favouriteLinesTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/colorPrimary"
         android:backgroundTintMode="src_in"
-        android:text="Lines"
+        android:text="@string/title_fragment_lines"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favStopsRecycle" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/favStopsRecycle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/favouriteLinesTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newStopButton" />
+        app:layout_constraintTop_toBottomOf="@+id/favouriteStopsTitle"
+        app:layout_constraintVertical_bias="0.066" />
 
-    <Button
-        android:id="@+id/newLineButton"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/favLinesRecycle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Add new favourite line"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/favouriteLinesTitle" />
 
-    <Button
-        android:id="@+id/btnPopup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginBottom="90dp"
-        android:onClick="Popup"
-        android:text="Popup"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,13 +3,10 @@ package asia.jokin.ohjelmistomobiili
 import android.content.Context
 import android.content.Intent
 import android.support.constraint.ConstraintLayout
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import org.json.JSONArray
 import org.json.JSONObject
 
 class BusStopAdapter (private val inputData: ArrayList<String>, classContext: Context, this_bus: String):
@@ -30,18 +27,11 @@ class BusStopAdapter (private val inputData: ArrayList<String>, classContext: Co
     override fun onBindViewHolder(holder: BusStopAdapter.MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        // TODO inputdata = departures[0]
         val responseData = JSONObject(inputData[position])
         holder.itemView.findViewById<TextView>(R.id.stopBusDest).text = responseData.getString("name1")
         holder.itemView.findViewById<TextView>(R.id.stopBusNr).text = responseData.getString("code")
         holder.itemView.findViewById<TextView>(R.id.stopBusArrival).text = parseTime(responseData.getString("time"))
 
-        /*val cardContent:ConstraintLayout = holder.cardView.findViewById(R.id.stopContent)
-        cardContent.setOnClickListener {
-            val clickIntent = Intent(appContext, MapsActivity::class.java)
-            clickIntent.putExtra("stopid", responseData.getString("code").toInt())
-            appContext.startActivity(clickIntent)
-        } // TODO sisainen adapteri ei sisally, eli klikkaus ei onnistu kokonaan*/
         val busStopsContent: ConstraintLayout = holder.itemView.findViewById(R.id.stopLayout)
         busStopsContent.setOnClickListener{
             val clickIntent = Intent(appContext, MapsActivity::class.java)
